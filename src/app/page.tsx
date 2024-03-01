@@ -34,7 +34,6 @@ export default function Home() {
               <li><a href="https://www.linkedin.com/in/adrian-czesnowski/" target="_blank" className='py-4' rel="noopener noreferrer">LinkedIn</a></li>
               <li><a href="https://github.com/adrianczesnowski" target="_blank" className='py-4' rel="noopener noreferrer">GitHub</a></li>
           </ul>
-          <p>testing ci cd actions with Vercel and github actions</p>
       </section>
 );
 }
