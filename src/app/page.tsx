@@ -21,10 +21,10 @@ export default function Home() {
               />
             </div>
           <p className="prose prose-neutral dark:prose-invert">
-              I&apos;m Frontend Developer specializing in <strong>React</strong>.
+              I&apos;m Frontend Developer specializing in <strong>React</strong> & <strong>Flutter</strong>.
               I also work with <strong>React Native</strong> and <strong>Vue</strong>.
           </p>
-          <p>In my free time, I learn backend and spend time at the <strong>gym</strong> 🏋️‍♂️</p>
+          <p>In my free time, I learn Kotlin and spend time at the <strong>gym</strong> 🏋️‍♂️</p>
           <p>
               This is my temporary website, in my spare time I will take care of it to make it nicer here 😅
           </p>
