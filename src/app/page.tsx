@@ -21,7 +21,7 @@ export default function Home() {
               />
             </div>
           <p className="prose prose-neutral dark:prose-invert">
-              I&apos;m Frontend Developer specializing in <strong>Flutter</strong> & <strong>React</strong>.
+              I&apos;m a developer specializing in <strong>Flutter</strong> & <strong>React</strong>.
               I also work with <strong>React Native</strong> and <strong>Vue</strong>.
           </p>
           <p>In my free time, I learn Kotlin and spend time at the <strong>gym</strong> 🏋️‍♂️</p>
