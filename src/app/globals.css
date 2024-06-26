@@ -19,3 +19,7 @@ body {
   background: rgb(var(--background-end-rgb));
 }
 
+.prose :where(p):not(:where([class~=not-prose],[class~=not-prose] *)) {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
