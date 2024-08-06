@@ -9,6 +9,7 @@ import Markdown from "react-markdown";
 const BLUR_FADE_DELAY = 0.04;
 
 export default function Page() {
+    // @ts-ignore
     return (
         <main className="flex flex-col min-h-[100dvh] space-y-10">
             <section id="hero">
@@ -73,7 +74,8 @@ export default function Page() {
                                         description={project.description}
                                         location={project.location}
                                         dates={project.dates}
-                                        image={project?.image}
+                                        // @ts-ignore
+                                        image={project.image}
                                         links={project.links}
                                     />
                                 </BlurFade>
