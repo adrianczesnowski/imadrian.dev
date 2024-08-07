@@ -23,6 +23,26 @@ export const DATA = {
         "Typescript",
         "Node.js",
     ],
+    skillsCloud: [
+        "typescript",
+        "javascript",
+        "dart",
+        "java",
+        "react",
+        "flutter",
+        "android",
+        "html5",
+        "css3",
+        "nodedotjs",
+        "express",
+        "nextdotjs",
+        "firebase",
+        "vercel",
+        "git",
+        "jira",
+        "github",
+        "figma",
+    ],
     navbar: [
         {href: "/", icon: HomeIcon, label: "Home"},
         // {href: "/blog", icon: NotebookIcon, label: "Blog"},
@@ -55,7 +75,7 @@ export const DATA = {
         {
             title: "THOC Ltd.",
             dates: "Dec 2023 - Now",
-            location: "Flutter Developer",
+            position: "Flutter Developer",
             description:
                 "Developed a mobile application which delivered bedtime stories to children using augmented reality.",
             image:
@@ -65,7 +85,7 @@ export const DATA = {
         {
             title: "Freelancer",
             dates: "May 2023 - Dec 2023",
-            location: "React / React Native Developer",
+            position: "React / React Native Developer",
             description:
                 "Developed a mobile application which delivers university campus wide events in real time to all students.",
             links: [],
@@ -73,10 +93,9 @@ export const DATA = {
         {
             title: "Qodeca Sp. z o.o.",
             dates: "June 2021 - Apr 2023",
-            location: "Junior React / React Native Developer",
+            position: "Junior React / React Native Developer",
             description:
                 "Developed a mobile application which communcicates a victims medical data from inside an ambulance to doctors at hospital.",
-            icon: "public",
             image:
                 "qodeca.jpeg",
             links: [],
