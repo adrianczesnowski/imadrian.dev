@@ -53,13 +53,13 @@ export const DATA = {
         social: {
             GitHub: {
                 name: "GitHub",
-                url: "https://dub.sh/dillion-github",
+                url: "https://github.com/adrianczesnowski",
                 icon: Icons.github,
                 navbar: true,
             },
             LinkedIn: {
                 name: "LinkedIn",
-                url: "https://dub.sh/dillion-linkedin",
+                url: "https://www.linkedin.com/in/adrian-czesnowski/",
                 icon: Icons.linkedin,
                 navbar: true,
             },
