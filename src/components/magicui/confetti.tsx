@@ -1,126 +1,48 @@
-"use client"
-import type {ReactNode} from "react";
-import React, {
-    createContext,
-    forwardRef,
-    useCallback,
-    useEffect,
-    useImperativeHandle,
-    useMemo,
-    useRef,
-} from "react";
+'use client'
+
 import confetti from "canvas-confetti";
-import type {
-    GlobalOptions as ConfettiGlobalOptions,
-    CreateTypes as ConfettiInstance,
-    Options as ConfettiOptions,
-} from "canvas-confetti";
 
-import {Button, ButtonProps} from "@/components/ui/button";
+import {Button} from "@/components/ui/button";
 
-type Api = {
-    fire: (options?: ConfettiOptions) => void;
-};
+export function ConfettiButton({
+                                   children,
+                                   onButtonClick,
+                               }: Readonly<{
+    children: React.ReactNode | JSX.Element;
+    onButtonClick?: () => void;
+}>) {
+    const handleClick = () => {
+        onButtonClick?.();
 
-type Props = React.ComponentPropsWithRef<"canvas"> & {
-    options?: ConfettiOptions;
-    globalOptions?: ConfettiGlobalOptions;
-    manualstart?: boolean;
-    children?: ReactNode;
-};
+        const defaults = {
+            spread: 360,
+            ticks: 50,
+            gravity: 0,
+            decay: 0.94,
+            startVelocity: 30,
+        };
 
-export type ConfettiRef = Api | null;
+        const shoot = () => {
+            confetti({
+                ...defaults,
+                particleCount: 40,
+                scalar: 1.2,
+            });
 
-const ConfettiContext = createContext<Api>({} as Api);
+            confetti({
+                ...defaults,
+                particleCount: 10,
+                scalar: 0.75,
+            });
+        };
 
-// eslint-disable-next-line react/display-name
-const Confetti = forwardRef<ConfettiRef, Props>((props, ref) => {
-    const {
-        options,
-        globalOptions = {resize: true, useWorker: true},
-        manualstart = false,
-        children,
-        ...rest
-    } = props;
-    const instanceRef = useRef<ConfettiInstance | null>(null); // confetti instance
-
-    const canvasRef = useCallback(
-        (node: HTMLCanvasElement) => {
-            if (node !== null) {
-                // <canvas> is mounted => create the confetti instance
-                if (instanceRef.current) return; // if not already created
-                instanceRef.current = confetti.create(node, {
-                    ...globalOptions,
-                    resize: true,
-                });
-            } else {
-                // <canvas> is unmounted => reset and destroy instanceRef
-                if (instanceRef.current) {
-                    instanceRef.current.reset();
-                    instanceRef.current = null;
-                }
-            }
-        },
-        [globalOptions],
-    );
-
-    // `fire` is a function that calls the instance() with `opts` merged with `options`
-    const fire = useCallback(
-        (opts = {}) => instanceRef.current?.({...options, ...opts}),
-        [options],
-    );
-
-    const api = useMemo(
-        () => ({
-            fire,
-        }),
-        [fire],
-    );
-
-    useImperativeHandle(ref, () => api, [api]);
-
-    useEffect(() => {
-        if (!manualstart) {
-            fire();
-        }
-    }, [manualstart, fire]);
-
-    return (
-        <ConfettiContext.Provider value={api}>
-            <canvas ref={canvasRef} {...rest} />
-            {children}
-        </ConfettiContext.Provider>
-    );
-});
-
-interface ConfettiButtonProps extends ButtonProps {
-    options?: ConfettiOptions &
-        ConfettiGlobalOptions & { canvas?: HTMLCanvasElement };
-    children?: React.ReactNode;
-    callback?: any;
-}
-
-function ConfettiButton({options, children, callback, ...props}: ConfettiButtonProps) {
-    const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-        const rect = event.currentTarget.getBoundingClientRect();
-        const x = rect.left + rect.width / 2;
-        const y = rect.top + rect.height / 2;
-        confetti({
-            ...options,
-            origin: {
-                x: x / window.innerWidth,
-                y: y / window.innerHeight,
-            },
-        });
+        setTimeout(shoot, 0);
+        setTimeout(shoot, 100);
     };
 
     return (
-        <span onClick={handleClick} {...props}>
-            {children}
-        </span>
+        <div className="relative">
+            <Button variant="outline" onClick={handleClick}>{children}</Button>
+        </div>
     );
 }
-
-export {Confetti, ConfettiButton};
-
-export default Confetti;

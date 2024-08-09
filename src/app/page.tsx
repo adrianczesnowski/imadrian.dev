@@ -5,7 +5,6 @@ import {DATA} from "@/data/resume";
 import Link from "next/link";
 import Markdown from "react-markdown";
 import IconCloud from "@/components/magicui/cloud-icon";
-import {ConfettiButton} from "@/components/magicui/confetti";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -20,7 +19,7 @@ export default function Page() {
                                 delay={BLUR_FADE_DELAY}
                                 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
                                 yOffset={8}
-                                text={`Hi, I'm ${DATA.name} 👋`}
+                                text={`Hi, I'm ${DATA.name.split(" ")[0]} 👋`}
                             />
                             <BlurFadeText
                                 className="max-w-[600px] md:text-xl"
@@ -128,8 +127,7 @@ export default function Page() {
                                 >
                                     with a direct question on LinkedIn
                                 </Link>{" "}
-                                and I&apos;ll respond whenever I can. Or just copy my <ConfettiButton
-                                className="text-blue-500 hover:underline cursor-pointer">email</ConfettiButton> here.
+                                and I&apos;ll respond whenever I can.
                             </p>
                         </div>
                     </BlurFade>
