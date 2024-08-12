@@ -42,7 +42,7 @@ export function ConfettiButton({
 
     return (
         <div className="relative">
-            <Button variant="outline" onClick={handleClick}>{children}</Button>
+            <Button variant='outline' size='default' onClick={handleClick}>{children}</Button>
         </div>
     );
 }

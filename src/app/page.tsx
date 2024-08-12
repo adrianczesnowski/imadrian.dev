@@ -5,6 +5,7 @@ import {DATA} from "@/data/resume";
 import Link from "next/link";
 import Markdown from "react-markdown";
 import IconCloud from "@/components/magicui/cloud-icon";
+import {Badge} from "@/components/ui/badge";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -26,6 +27,15 @@ export default function Page() {
                                 delay={BLUR_FADE_DELAY}
                                 text={DATA.description}
                             />
+                            <BlurFade>
+                                <Badge className="inline-flex px-3 py-1 text-sm mt-2 font-normal gap-2">
+                                    <span className="relative flex h-3 w-3">
+                                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                      <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                                    </span>
+                                    Available for additional work
+                                </Badge>
+                            </BlurFade>
                         </div>
                     </div>
                 </div>
@@ -122,6 +132,7 @@ export default function Page() {
                             <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                                 Want to chat? Just shoot me a dm{" "}
                                 <Link
+                                    target="_blank"
                                     href={DATA.contact.social.LinkedIn.url}
                                     className="text-blue-500 hover:underline"
                                 >

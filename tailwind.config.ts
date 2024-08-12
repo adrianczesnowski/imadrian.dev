@@ -75,6 +75,7 @@ const config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "ping": "ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;",
       },
     },
   },

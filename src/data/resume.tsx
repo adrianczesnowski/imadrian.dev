@@ -9,8 +9,7 @@ export const DATA = {
     locationLink: "https://www.google.com/maps/place/sanfrancisco",
     description:
         "Currently Flutter developer. I love building things and helping people. Sometimes I go to the gym.",
-    summary:
-        "At the end of 2022, I quit my job as a software engineer to go fulltime into building and scaling my own SaaS businesses. In the past, [I pursued a double degree in computer science and business](/#education), [interned at big tech companies in Silicon Valley](https://www.youtube.com/watch?v=d-LJ2e5qKdE), and [competed in over 21 hackathons for fun](/#hackathons). I also had the pleasure of being a part of the first ever in-person cohort of buildspace called [buildspace sf1](https://buildspace.so/sf1).",
+    summary: "I graduated from high school in May 2021. After a month, I started working as a Junior Front-end Developer at Qodeca. For less than two years there I gained experience under the guidance of great people, experts in their fields. A few months later I ended up full-time at THOC Ltd. where I slightly changed my direction and started working with Flutter.",
     avatarUrl: "/me.jpg",
     skills: [
         "Flutter",
