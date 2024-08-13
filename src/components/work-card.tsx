@@ -8,6 +8,7 @@ interface Props {
     dates: string;
     position: string;
     image?: string;
+    tags?: readonly string[];
     links?: readonly {
         icon: React.ReactNode;
         title: string;
@@ -22,6 +23,7 @@ export function WorkCard({
                              position,
                              image,
                              links,
+                             tags,
                          }: Props) {
     return (
         <li className="relative ml-10 py-4">
@@ -45,6 +47,19 @@ export function WorkCard({
           </span>
                 )}
             </div>
+            {tags && tags.length > 0 && (
+                <div className="mt-2 flex flex-wrap gap-1">
+                    {tags?.map((tag) => (
+                        <Badge
+                            className="px-1 py-0 text-[10px]"
+                            variant="secondary"
+                            key={tag}
+                        >
+                            {tag}
+                        </Badge>
+                    ))}
+                </div>
+            )}
             {links && links.length > 0 && (
                 <div className="mt-2 flex flex-row flex-wrap items-start gap-2">
                     {links?.map((link, idx) => (

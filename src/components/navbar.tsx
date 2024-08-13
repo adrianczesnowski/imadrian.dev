@@ -1,6 +1,5 @@
 'use client'
 
-import {ModeToggle} from "@/components/mode-toggle";
 import {ConfettiButton} from "@/components/magicui/confetti";
 import {CopyIcon, Check} from "lucide-react";
 import React, {useState} from "react";
@@ -25,9 +24,8 @@ export default function Navbar() {
                     id="nav"
                 >
                     <div className="flex flex-row gap-2 justify-end space-x-0 w-full">
-                        <ModeToggle/>
                         <ConfettiButton onButtonClick={copyEmail}>
-                            <span>Copy my email</span>
+                            <span>adrian.czesnowski22@gmail.com</span>
                             {isEmailCopied ? <Check size={16}/> : <CopyIcon size={16}/>}
                         </ConfettiButton>
                     </div>

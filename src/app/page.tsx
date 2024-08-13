@@ -83,7 +83,7 @@ export default function Page() {
                                         description={project.description}
                                         position={project.position}
                                         dates={project.dates}
-                                        // @ts-ignore
+                                        tags={project.tags}
                                         image={project.image}
                                         links={project.links}
                                     />
