@@ -30,7 +30,8 @@ export default function Page() {
                             <BlurFade>
                                 <Badge className="inline-flex px-3 py-1 text-sm mt-2 font-normal gap-2">
                                     <span className="relative flex h-3 w-3">
-                                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                      <span
+                                          className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                                       <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
                                     </span>
                                     Available for additional work
@@ -64,27 +65,31 @@ export default function Page() {
                                     Work Experience
                                 </h2>
                                 <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                                    My experience spans both web and mobile technologies, giving me a versatile skill set. I am committed to continuous learning and growth, with a current focus on expanding my proficiency in Flutter and Dart while leveraging my background in web development.                                </p>
+                                    My experience spans both web and mobile technologies, giving me a versatile skill
+                                    set. I am committed to continuous learning and growth, with a current focus on
+                                    expanding my proficiency in Flutter and Dart while leveraging my background in web
+                                    development. </p>
                             </div>
                         </div>
                     </BlurFade>
                     <BlurFade delay={BLUR_FADE_DELAY * 14}>
                         <ul className="mb-4 ml-4 divide-y divide-dashed border-l">
-                            {DATA.work.map((project, id) => (
-                                <BlurFade
-                                    key={project.title + project.dates}
-                                    delay={BLUR_FADE_DELAY * 15 + id * 0.05}
-                                >
-                                    <WorkCard
-                                        title={project.title}
-                                        description={project.description}
-                                        position={project.position}
-                                        dates={project.dates}
-                                        tags={project.tags}
-                                        image={project.image}
-                                        links={project.links}
-                                    />
-                                </BlurFade>
+                            {DATA.work.map((company, id) => (
+                                <li key={company.title + company.dates}>
+                                    <BlurFade
+                                        delay={BLUR_FADE_DELAY * 15 + id * 0.05}
+                                    >
+                                        <WorkCard
+                                            title={company.title}
+                                            description={company.description}
+                                            position={company.position}
+                                            dates={company.dates}
+                                            tags={company.tags}
+                                            image={company.image}
+                                            links={company.links}
+                                        />
+                                    </BlurFade>
+                                </li>
                             ))}
                         </ul>
                     </BlurFade>
