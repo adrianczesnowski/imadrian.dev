@@ -24,8 +24,9 @@ export default function Navbar() {
                     id="nav"
                 >
                     <div className="flex flex-row gap-2 justify-end space-x-0 w-full">
+                        <h1>adrian.</h1>
                         <ConfettiButton onButtonClick={copyEmail}>
-                            <span>adrian.czesnowski22@gmail.com</span>
+                            <span>Get my email</span>
                             {isEmailCopied ? <Check size={16}/> : <CopyIcon size={16}/>}
                         </ConfettiButton>
                     </div>

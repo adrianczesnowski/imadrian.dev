@@ -51,7 +51,7 @@ export default function Page() {
                     </Markdown>
                 </BlurFade>
             </section>
-            <section id="hackathons">
+            <section id="work">
                 <div className="space-y-12 w-full">
                     <BlurFade delay={BLUR_FADE_DELAY * 13}>
                         <div className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -64,10 +64,7 @@ export default function Page() {
                                     Work Experience
                                 </h2>
                                 <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                                    During my several years of work as a programmer, I have worked on a wide
-                                    variety of projects, from different industries. I was always surrounded by people
-                                    from whom I could learn a lot.
-                                </p>
+                                    My experience spans both web and mobile technologies, giving me a versatile skill set. I am committed to continuous learning and growth, with a current focus on expanding my proficiency in Flutter and Dart while leveraging my background in web development.                                </p>
                             </div>
                         </div>
                     </BlurFade>
