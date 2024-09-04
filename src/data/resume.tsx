@@ -8,7 +8,7 @@ export const DATA = {
     location: "Ostrow Wlkp.",
     locationLink: "https://www.google.com/maps/place/sanfrancisco",
     description:
-        "Currently Flutter developer passionate about creating cutting-edge mobile experiences. I build impactful solutions, helping entrepreneurs bring their visions to life.",
+        "Currently Flutter developer passionate about creating cutting-edge mobile experiences.",
     summary: "I graduated from high school in May 2021. After a month, I started working as a Junior Front-end Developer at Qodeca. For less than two years there I gained experience under the guidance of great people, experts in their fields. A few months later I ended up full-time at THOC Ltd. where I slightly changed my direction and started working with Flutter.",
     avatarUrl: "/me.jpg",
     skills: [
