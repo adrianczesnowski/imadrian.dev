@@ -1,26 +1,70 @@
-import { GeistSans } from "geist/font/sans";
-import type { Metadata } from "next";
+import Navbar from "@/components/navbar";
+import {ThemeProvider} from "@/components/theme-provider";
+import {DATA} from "@/data/resume";
+import {cn} from "@/lib/utils";
+import type {Metadata} from "next";
+import {Inter as FontSans} from "next/font/google";
 import "./globals.css";
-import {Navbar} from "@/app/components/nav";
+
+const fontSans = FontSans({
+    subsets: ["latin"],
+    variable: "--font-sans",
+});
 
 export const metadata: Metadata = {
-  title: "Adrian Czesnowski | imadrian.dev",
-  description: "Adrian Czesnowski - Frontend Developer working with React & ReactNative on a daily basis.",
+    metadataBase: new URL(DATA.url),
+    title: {
+        default: DATA.name,
+        template: `%s | ${DATA.name}`,
+    },
+    description: DATA.description,
+    openGraph: {
+        title: `${DATA.name}`,
+        description: DATA.description,
+        url: DATA.url,
+        siteName: `${DATA.name}`,
+        locale: "en_US",
+        type: "website",
+    },
+    robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            "max-video-preview": -1,
+            "max-image-preview": "large",
+            "max-snippet": -1,
+        },
+    },
+    twitter: {
+        title: `${DATA.name}`,
+        card: "summary_large_image",
+    },
+    verification: {
+        google: "",
+        yandex: "",
+    },
 };
 
 export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
+                                       children,
+                                   }: Readonly<{
+    children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en" className={GeistSans.className}>
-      <body className="antialiased max-w-2xl mb-16 flex flex-col md:flex-row mx-4 mt-8 lg:mx-auto">
-        <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
-          <Navbar />
-          {children}
-        </main>
-      </body>
-    </html>
-  );
+    return (
+        <html lang="en" suppressHydrationWarning>
+        <body
+            className={cn(
+                "min-h-screen bg-background font-sans antialiased max-w-2xl mx-auto py-12 sm:py-24 px-6",
+                fontSans.variable
+            )}
+        >
+        <ThemeProvider attribute="class" defaultTheme="dark">
+            <Navbar/>
+            {children}
+        </ThemeProvider>
+        </body>
+        </html>
+    );
 }
