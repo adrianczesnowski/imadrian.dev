@@ -72,7 +72,7 @@ export const DATA = {
             position: "Flutter Developer",
             description: "At THOC, my career took an exciting new direction as I ventured into mobile development with Flutter and Dart. This strategic move has proven to be a pivotal decision in my professional journey, opening up new opportunities and challenges. While I maintain my expertise in Web Development, I am particularly enthusiastic about further advancing my skills in mobile app development using Flutter.",
             image: "/thoc.jpeg",
-            tags: ["Flutter", "Dart", "Riverpod", "Hive", "dio", "BLoC", "Cubit", "Firebase", "Supabase", "VueJS", "React", "React Native", "TypeScript", "CSS"],
+            tags: ["Flutter", "Dart", "Riverpod", "Hive", "dio", "Firebase", "VueJS", "React", "React Native", "TypeScript"],
             links: [],
         },
         {
