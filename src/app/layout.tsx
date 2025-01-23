@@ -5,6 +5,7 @@ import {cn} from "@/lib/utils";
 import type {Metadata} from "next";
 import {Inter as FontSans} from "next/font/google";
 import "./globals.css";
+import {ScrollProgress} from "@/components/magicui/scroll-progress";
 
 const fontSans = FontSans({
     subsets: ["latin"],
@@ -61,6 +62,7 @@ export default function RootLayout({
             )}
         >
         <ThemeProvider attribute="class" defaultTheme="dark">
+            <ScrollProgress className="top-[0px]" />
             <Navbar/>
             {children}
         </ThemeProvider>

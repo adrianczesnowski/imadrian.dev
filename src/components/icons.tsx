@@ -1,3 +1,4 @@
+// @ts-ignore
 import { GlobeIcon, MailIcon } from "lucide-react";
 
 export type IconProps = React.HTMLAttributes<SVGElement>;

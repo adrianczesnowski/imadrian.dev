@@ -136,7 +136,7 @@ export default function Page() {
                                 <Link
                                     target="_blank"
                                     href={DATA.contact.social.LinkedIn.url}
-                                    className="text-blue-500 hover:underline"
+                                    className="text-purple-900 hover:underline"
                                 >
                                     with a direct question on LinkedIn
                                 </Link>{" "}
